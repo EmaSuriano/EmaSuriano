@@ -27,7 +27,7 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Send greeting
-    - uses: actions/setup-node@v1
+      uses: actions/setup-node@v1
     - run: echo "Dispatched from ${{ github.event.inputs.dispatcher }}"
     - run: yarn install --frozen-lockfile
     - run: yarn start
