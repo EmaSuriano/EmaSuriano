@@ -70,6 +70,8 @@ const main = async () => {
     `All resources are extracted from [${about.website}](${about.website}) ❤️`,
   );
 
+  content.push(`Last update: _${new Date().toLocaleString()}_`);
+
   fs.writeFileSync('README.md', content.join(LINE_SEPARATOR + LINE_SEPARATOR));
 };
 
