@@ -1,4 +1,4 @@
-## Hello, I'm Ema Suriano
+## Hello, I'm Ema Suriano 👋
 
 Passionate Engineer driven by all the Javascript ecosystem. Once a month I write an article. Sharing is the best way to learn!
 
@@ -14,4 +14,4 @@ Passionate Engineer driven by all the Javascript ecosystem. Once a month I write
 
 All resources are extracted from [https://emasuriano.com/](https://emasuriano.com/) ❤️
 
-Last update: _10/19/2020, 6:17:13 PM_
+Last update: _10/19/2020, 6:30:28 PM_

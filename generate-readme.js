@@ -59,7 +59,7 @@ const main = async () => {
   const [about] = await getGithubFile('content/about/authors.yml');
   const summary = await getGithubFile('content/summary.yml');
 
-  content.push(`## Hello, I'm ${about.name}`);
+  content.push(`## Hello, I'm ${about.name} 👋`);
   content.push(about.bio.replace(LINE_SEPARATOR, ' '));
 
   content.push(createSummaryTable(summary, about.website));
