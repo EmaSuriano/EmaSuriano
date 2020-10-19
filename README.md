@@ -1,13 +1,15 @@
-## Hello, I'm Ema Suriano 👋
+## Hello, I'm Ema Suriano
 
-I like building cool stuff with #code 👨‍💻 While trying to learn #german, I #travel around the Globe and #cook at home for the next Master Chef 👨‍🍳
-
-| **Open Source Projects 👨‍💻**                                                       | **Latest Blogs ✍️**                                                                                                                                       |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Gatsby Event Calendar](https://github.com/EmaSuriano/gatsby-starter-event-calendar) | [End to End testing in React Native with Detox](https://emasuriano.com/blog/end-to-end-testing-in-react-native-with-detox/)                                  |
-| [Gatsby Starter Mate](https://github.com/EmaSuriano/gatsby-starter-mate)             | [Building a maintainable icon system for react and React Native](https://emasuriano.com/blog/building-a-maintainable-icon-system-for-react-and-react-native) |
-| [React Hotkey Tooltip](https://github.com/EmaSuriano/react-hotkey-tooltip)           | [Docker for Frontend Developers](https://emasuriano.com/blog/docker-for-frontend-developers)                                                                 |
-| [Blindle](https://blindle.github.io/page1.html#menu1-2c)                             | [Using Storybook as a visual testing platform](https://emasuriano.com/blog/using-storybook-as-a-visual-testing-platform)                                     |
+Passionate Engineer driven by all the Javascript ecosystem. Once a month I write an article. Sharing is the best way to learn!
 
 
-All resources are extracted from [emasuriano.com](http://emasuriano.com/) ❤️
+| Projects | Posts | Talks |
+| --- | --- | --- |
+| [Event Calendar](https://github.com/EmaSuriano/gatsby-starter-event-calendar) | [Dynamic Types Validation in Typescript](https://emasuriano.com/blog/Dynamic-Types-Validation-in-Typescript) | [Runtime Types Validation in Typescript](https://slides.com/emasuriano/runtime-types-validation-in-typescript) |
+| [Mate](https://github.com/EmaSuriano/gatsby-starter-mate) | [End to end testing in React Native with Detox](https://emasuriano.com/blog/End-to-end-testing-in-React-Native-with-Detox) | [From create-react-app to create-any-app](https://from-cra-to-caa.netlify.app) |
+| [React Hotkey Tooltip](https://github.com/EmaSuriano/react-hotkey-tooltip) | [Building a maintainable Icon System for React and React Native](https://emasuriano.com/blog/Building-a-maintainable-Icon-System-for-React-and-React-Native) |  |
+| [Blindle](https://blindle.github.io/page1.html#menu1-2c) | [Docker for Frontend Developers](https://emasuriano.com/blog/Docker-for-Frontend-Developers) |  |
+
+---
+
+All resources are extracted from [https://emasuriano.com/](https://emasuriano.com/) ❤️

@@ -1,0 +1,25 @@
+{
+  "name": "EmaSuriano",
+  "version": "1.0.0",
+  "description": "I like building cool stuff with #code 👨‍💻 While trying to learn #german, I #travel around the Globe and #cook at home for the next Master Chef 👨‍🍳",
+  "main": "index.js",
+  "scripts": {
+    "start": "node generate-readme.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmaSuriano/EmaSuriano.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmaSuriano/EmaSuriano/issues"
+  },
+  "homepage": "https://github.com/EmaSuriano/EmaSuriano#readme",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "dotenv": "^8.2.0",
+    "yaml": "^1.10.0"
+  }
+}
