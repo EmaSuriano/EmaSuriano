@@ -20,7 +20,7 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn start
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.GH_TOKEN}}
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Apply php-cs-fixer changes

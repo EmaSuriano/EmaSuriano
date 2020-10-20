@@ -11,7 +11,7 @@ const getGithubFile = async (path) => {
     method: 'GET',
     url: `https://api.github.com/repos/EmaSuriano/portfolio/contents/${path}`,
     headers: {
-      Authorization: `token ${process.env.GITHUB_TOKEN}`,
+      Authorization: `token ${process.env.GH_TOKEN}`,
       Accept: 'application/vnd.github.v3.raw',
     },
   });
