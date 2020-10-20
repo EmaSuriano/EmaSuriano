@@ -1,6 +1,7 @@
 name: Manual workflow
 
 on:
+  repository_dispatch:
   workflow_dispatch:
     inputs:
       dispatcher:
