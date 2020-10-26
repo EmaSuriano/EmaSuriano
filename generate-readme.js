@@ -18,6 +18,7 @@ const getSummaryFile = async () => {
 const sortAndTrim = (items) => {
   return items
     .sort((x, y) => new Date(y.date) - new Date(x.date))
+    .filter((x) => !x.secret)
     .splice(0, ROW_AMOUNT);
 };
 
