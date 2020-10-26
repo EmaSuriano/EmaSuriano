@@ -1,0 +1,19 @@
+name: Event Listener
+
+on:
+  repository_dispatch:
+    types: [my-event]
+
+jobs:
+  listener:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Manual deploy
+        uses: actions/setup-node@v1
+      - run: yarn install --frozen-lockfile
+      - run: yarn start
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update Readme

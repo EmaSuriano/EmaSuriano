@@ -6,14 +6,10 @@ require('dotenv').config();
 const ROW_AMOUNT = 4;
 const LINE_SEPARATOR = '\n';
 
-const getGithubFile = async (path) => {
+const getSummaryFile = async () => {
   const { data } = await axios({
     method: 'GET',
-    url: `https://api.github.com/repos/EmaSuriano/portfolio/contents/${path}`,
-    headers: {
-      Authorization: `token ${process.env.GH_TOKEN}`,
-      Accept: 'application/vnd.github.v3.raw',
-    },
+    url: `http://emasuriano.com/summary.yml`,
   });
 
   return yaml.parse(data);
@@ -54,23 +50,17 @@ const createSummaryTable = ({ talks, posts, projects }, website) => {
 };
 
 const main = async () => {
-  const content = [];
+  const summary = await getSummaryFile();
+  const [about] = summary.about;
 
-  const [about] = await getGithubFile('content/about/authors.yml');
-  const summary = await getGithubFile('content/summary.yml');
-
-  content.push(`## Hello, I'm ${about.name} 👋`);
-  content.push(about.bio.replace(LINE_SEPARATOR, ' '));
-
-  content.push(createSummaryTable(summary, about.website));
-
-  content.push(`---`);
-
-  content.push(
+  const content = [
+    `## Hello, I'm ${about.name} 👋`,
+    about.bio.replace(LINE_SEPARATOR, ' '),
+    createSummaryTable(summary, about.website),
+    '---',
     `All resources are extracted from [${about.website}](${about.website}) ❤️`,
-  );
-
-  content.push(`Last update: _${new Date().toLocaleString()}_`);
+    `Last update: _${new Date().toLocaleString()}_`,
+  ];
 
   fs.writeFileSync('README.md', content.join(LINE_SEPARATOR + LINE_SEPARATOR));
 };

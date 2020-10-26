@@ -1,21 +1,17 @@
 name: Manual workflow
 
 on:
-  repository_dispatch:
-    types: [my-event]
+  workflow_dispatch:
+  push:
+    branches: master
 
 jobs:
-  build:
+  dispatch-event:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Manual deploy
-        uses: actions/setup-node@v1
-      - run: yarn install --frozen-lockfile
-      - run: yarn start
-        env:
-          GH_TOKEN: ${{secrets.GH_TOKEN}}
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1.1.2
         with:
-          commit_message: Update Readme
+          token: ${{secrets.GH_TOKEN}}
+          event-type: my-event
