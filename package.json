@@ -19,7 +19,6 @@
   "homepage": "https://github.com/EmaSuriano/EmaSuriano#readme",
   "dependencies": {
     "axios": "^0.20.0",
-    "dotenv": "^8.2.0",
     "yaml": "^1.10.0"
   }
 }

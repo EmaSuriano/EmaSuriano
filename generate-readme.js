@@ -1,7 +1,6 @@
 const axios = require('axios');
 const yaml = require('yaml');
 const fs = require('fs');
-require('dotenv').config();
 
 const ROW_AMOUNT = 4;
 const LINE_SEPARATOR = '\n';
