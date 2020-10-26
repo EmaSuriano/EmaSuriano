@@ -5,11 +5,12 @@ require('dotenv').config();
 
 const ROW_AMOUNT = 4;
 const LINE_SEPARATOR = '\n';
+const WEBSITE = 'https://emasuriano.com';
 
 const getSummaryFile = async () => {
   const { data } = await axios({
     method: 'GET',
-    url: `http://emasuriano.com/summary.yml`,
+    url: `${WEBSITE}/summary.yml`,
   });
 
   return yaml.parse(data);
@@ -21,17 +22,14 @@ const sortAndTrim = (items) => {
     .splice(0, ROW_AMOUNT);
 };
 
-const createSummaryTable = ({ talks, posts, projects }, website) => {
-  const talksList = sortAndTrim(talks).map(
-    (talk) => `[${talk.name}](${talk.link})`,
-  );
-  const postsList = sortAndTrim(posts).map(
-    (post) =>
-      `[${post.title}](${website}blog/${post.title.split(' ').join('-')})`,
-  );
-  const projectsList = sortAndTrim(projects).map(
-    (project) => `[${project.name}](${project.link})`,
-  );
+const externalLink = ({ name, link }) => `[${name}](${link})`;
+const blogLink = ({ title }) =>
+  `[${title}](${WEBSITE}/blog/${title.split(' ').join('-')})`;
+
+const createSummaryTable = ({ talks, posts, projects }) => {
+  const talksList = sortAndTrim(talks).map(externalLink);
+  const postsList = sortAndTrim(posts).map(blogLink);
+  const projectsList = sortAndTrim(projects).map(externalLink);
 
   const rows = new Array(ROW_AMOUNT)
     .fill('')
@@ -56,7 +54,7 @@ const main = async () => {
   const content = [
     `## Hello, I'm ${about.name} 👋`,
     about.bio.replace(LINE_SEPARATOR, ' '),
-    createSummaryTable(summary, about.website),
+    createSummaryTable(summary),
     '---',
     `All resources are extracted from [${about.website}](${about.website}) ❤️`,
     `Last update: _${new Date().toLocaleString()}_`,
