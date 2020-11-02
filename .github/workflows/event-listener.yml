@@ -9,6 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/hello-world-javascript-action@v1
+        with:
+          rate: 60sec
+          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v2
       - name: Manual deploy
         uses: actions/setup-node@v1
@@ -17,3 +21,4 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update Readme
+ 
