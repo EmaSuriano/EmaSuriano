@@ -14,4 +14,4 @@ Passionate Engineer driven by all the Javascript ecosystem. Once a month I write
 
 All resources are extracted from [https://emasuriano.com/](https://emasuriano.com/) ❤️
 
-Last update: _11/9/2020, 5:22:00 AM_
+Last update: _11/9/2020, 5:27:55 AM_
