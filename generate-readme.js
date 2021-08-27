@@ -56,7 +56,7 @@ const main = async () => {
     about.bio.replace(LINE_SEPARATOR, ' '),
     createSummaryTable(summary),
     '---',
-    `All resources are extracted from [${about.website}](${about.website}) ❤️`,
+    `All resources are extracted from [${about.website}](${about.website})`,
     `Last update: _${new Date().toLocaleString()}_`,
   ];
 
