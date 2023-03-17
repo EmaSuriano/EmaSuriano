@@ -1,24 +1,32 @@
 {
   "name": "EmaSuriano",
   "version": "1.0.0",
-  "description": "I like building cool stuff with #code 👨‍💻 While trying to learn #german, I #travel around the Globe and #cook at home for the next Master Chef 👨‍🍳",
+  "description": "My github profile automatized from my website --> http://emasuriano.com/",
   "main": "index.js",
   "scripts": {
-    "start": "node generate-readme.js"
+    "start": "ts-node generate-readme"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EmaSuriano/EmaSuriano.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "github",
+    "README",
+    "generation",
+    "cronjob"
+  ],
+  "author": "EmaSuriano",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/EmaSuriano/EmaSuriano/issues"
   },
   "homepage": "https://github.com/EmaSuriano/EmaSuriano#readme",
-  "dependencies": {
-    "axios": "^0.26.0",
-    "yaml": "^1.10.2"
+  "devDependencies": {
+    "@types/node": "^18.15.3",
+    "axios": "^1.3.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2",
+    "zod": "^3.21.4"
   }
 }

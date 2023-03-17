@@ -1,24 +1,18 @@
-name: Event Listener
+name: Generate README every Monday
 
+# https://crontab.guru/#0_0_*_*_1
 on:
-  repository_dispatch:
-    types: [my-event]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 1'
 
 jobs:
-  listener:
+  generate:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/hello-world-javascript-action@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          rate: 60sec
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/checkout@v2
-      - name: Manual deploy
-        uses: actions/setup-node@v1
+          node-version-file: '.nvmrc'
       - run: yarn install --frozen-lockfile
       - run: yarn start
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Update Readme
- 
