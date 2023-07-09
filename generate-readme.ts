@@ -64,7 +64,7 @@ const main = async () => {
     `## Hello, I'm ${name} 👋`,
     bio,
     createSummaryTable({ posts, projects, talks }).join(LINE_SEPARATOR),
-    toMarkdownLink("Ema's github stats", 'https://github-readme-stats.vercel.app/api?username=emasuriano&show_icons=true')
+    toMarkdownLink({ title: "Ema's github stats", url: 'https://github-readme-stats.vercel.app/api?username=emasuriano&show_icons=true' })
     '---',
     `All resources are extracted from ${toMarkdownLink({
       title: website.split('://').pop()!,
