@@ -9,7 +9,7 @@ const SUMMARY_API = 'https://emasuriano.com/api/summary';
 const LinkSchema = z.object({
   title: z.string(),
   url: z.string().url(),
-  image: z.boolean()
+  image: z.boolean().optional()
 });
 
 const SummarySchema = z.object({
@@ -74,7 +74,6 @@ const main = async () => {
     `All resources are extracted from ${toMarkdownLink({
       title: website.split('://').pop()!,
       url: website,
-      image: false,
     })}`,
     `Last update: _${today}_`,
   ];
