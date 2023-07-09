@@ -74,6 +74,7 @@ const main = async () => {
     `All resources are extracted from ${toMarkdownLink({
       title: website.split('://').pop()!,
       url: website,
+      image: false,
     })}`,
     `Last update: _${today}_`,
   ];
