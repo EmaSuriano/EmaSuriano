@@ -9,7 +9,7 @@ Passionate Engineer driven by all the Javascript ecosystem. On my spare time I l
 | [React Hotkey Tooltip](https://github.com/EmaSuriano/react-hotkey-tooltip) | [Building a multi-framework dashboard with Astro](https://blog.logrocket.com/building-multi-framework-dashboard-with-astro/) | [Runtime Types Validation in Typescript](https://slides.com/emasuriano/runtime-types-validation-in-typescript) |
 | [React Scroll Section](https://github.com/EmaSuriano/react-scroll-section) | [New year, new portfolio](https://emasuriano.com/blog/new-year-new-page) |  |
 
-[Ema's github stats](https://github-readme-stats.vercel.app/api?username=emasuriano&show_icons=true)
+![Ema's github stats](https://github-readme-stats.vercel.app/api?username=emasuriano&show_icons=true)
 
 ---
 
