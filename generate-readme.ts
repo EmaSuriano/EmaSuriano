@@ -9,6 +9,7 @@ const SUMMARY_API = 'https://emasuriano.com/api/summary';
 const LinkSchema = z.object({
   title: z.string(),
   url: z.string().url(),
+  image: z.boolean()
 });
 
 const SummarySchema = z.object({
@@ -23,7 +24,7 @@ const SummarySchema = z.object({
 type Link = z.infer<typeof LinkSchema>;
 type Summary = z.infer<typeof SummarySchema>;
 
-const toMarkdownLink = ({ title, url }: Link) => `[${title}](${url})`;
+const toMarkdownLink = ({ title, url, image }: Link) => `${image ? '!': ''}[${title}](${url})`;
 
 const createSummaryTable = ({
   talks,
@@ -67,6 +68,7 @@ const main = async () => {
     toMarkdownLink({
       title: "Ema's github stats",
       url: 'https://github-readme-stats.vercel.app/api?username=emasuriano&show_icons=true',
+      image: true,
     }),
     '---',
     `All resources are extracted from ${toMarkdownLink({
