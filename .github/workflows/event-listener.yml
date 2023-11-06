@@ -1,4 +1,4 @@
-name: Generate README every Month
+name: master
 
 # https://crontab.guru/#0_0_*_*_1
 on:
