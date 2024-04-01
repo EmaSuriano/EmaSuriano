@@ -49,7 +49,7 @@ const createSummaryTable = ({
 };
 
 const createList = (title: string, items: Link[]) => {
-  return [`### ${title}`, items.filter((_,i) => i<ROW_AMOUNT).map(toMarkdownLink)].join(LINE_SEPARATOR)
+  return [`### ${title}`, ...items.filter((_,i) => i<ROW_AMOUNT).map(link => `- ${toMarkdownLink(link)}`)].join(LINE_SEPARATOR)
 }
 
 const main = async () => {
