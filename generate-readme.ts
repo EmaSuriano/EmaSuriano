@@ -68,7 +68,7 @@ const main = async () => {
   const content = [
     `## Hello, I'm ${name} 👋`,
     bio,
-    createList('Latest projects:', projects),
+    createList('Latest projects:', projects.reverse()),
     createList('Latest posts:', posts),
     createList('Latest talks:', talks),
     toMarkdownLink({
