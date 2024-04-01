@@ -48,6 +48,10 @@ const createSummaryTable = ({
   ].map((line) => `| ${line} |`);
 };
 
+const createList = (title, items) => {
+  return [`### ${title}`, items.filter((_,i) => i<ROW_AMOUNT).map(toMarkdownLink)].join(LINE_SEPARATOR)
+}
+
 const main = async () => {
   const summary = await axios.get(SUMMARY_API);
 
@@ -64,7 +68,9 @@ const main = async () => {
   const content = [
     `## Hello, I'm ${name} 👋`,
     bio,
-    createSummaryTable({ posts, projects, talks }).join(LINE_SEPARATOR),
+    createList('Latest projects:', projects),
+    createList('Latest posts:', posts),
+    createList('Latest talks:', talks),
     toMarkdownLink({
       title: "Ema's github stats",
       url: 'https://github-readme-stats.vercel.app/api?username=emasuriano&show_icons=true',
