@@ -3,9 +3,9 @@
 Passionate Engineer driven by all the Javascript ecosystem. On my spare time I like to write and speak publicly
 
 ### Latest projects:
-- [Gatsby Starter Event Calendar](https://github.com/EmaSuriano/gatsby-starter-event-calendar)
-- [Gatsby Starter Mate](https://github.com/EmaSuriano/gatsby-starter-mate)
-- [React Hotkey Tooltip](https://github.com/EmaSuriano/react-hotkey-tooltip)
+- [Github Tracker](https://github.com/EmaSuriano/github-tracker)
+- [Astro Resume](https://github.com/EmaSuriano/astro-resume)
+- [Astro Art Portfolio](https://github.com/EmaSuriano/astro-art-portfolio)
 - [React Scroll Section](https://github.com/EmaSuriano/react-scroll-section)
 
 ### Latest posts:
