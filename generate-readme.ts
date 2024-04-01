@@ -48,7 +48,7 @@ const createSummaryTable = ({
   ].map((line) => `| ${line} |`);
 };
 
-const createList = (title, items) => {
+const createList = (title: string, items: Link[]) => {
   return [`### ${title}`, items.filter((_,i) => i<ROW_AMOUNT).map(toMarkdownLink)].join(LINE_SEPARATOR)
 }
 
