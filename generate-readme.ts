@@ -53,8 +53,17 @@ const saveInReadme = (content: string) => {
   );
 };
 
+const getSummary = () => {
+  if (fs.existsSync('summary.json')) {
+    // hack for Github Actions that returns 403 when calling with axios ...
+    return JSON.parse(fs.readFileSync('summary.json', 'utf-8'));
+  }
+
+  return axios.get(SUMMARY_API);
+};
+
 const main = async () => {
-  const summary = await axios.get(SUMMARY_API);
+  const summary = await getSummary();
 
   const { name, bio, website, projects, posts, talks } = SummarySchema.parse(
     summary.data,
