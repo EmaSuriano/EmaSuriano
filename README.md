@@ -2,7 +2,7 @@
 
 Passionate Engineer driven by all the Javascript ecosystem. In my spare time I like to write and speak publicly
 
-Latest releases from [emasuriano.com/](https://emasuriano.com/):
+Latest releases from [emasuriano.com](https://emasuriano.com/):
 
 ### Open source projects
 - [Astro Resume](https://github.com/EmaSuriano/astro-resume)

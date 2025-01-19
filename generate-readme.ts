@@ -65,7 +65,7 @@ const main = async () => {
   const content = [
     `## Hello, I'm ${name} 👋`,
     bio,
-    `Latest releases from [${website.split('://').pop()!}](${website}):`,
+    `Latest releases from [${website.split('/')[2]!}](${website}):`,
     createList('Open source projects', projects.reverse()),
     createList('Written posts', posts, 6),
     createList('Talks', talks),
