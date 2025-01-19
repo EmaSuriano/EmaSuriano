@@ -61,10 +61,12 @@ const getSummary = () => {
 
   return axios.get(SUMMARY_API, {
     headers: {
-      Accept: 'application/json',
       // hack for Github Actions that returns 403 when calling with axios ...
       'User-Agent':
-        'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36',
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+      Referer: 'https://emasuriano.com',
+      Accept: 'application/json',
+      'Accept-Encoding': 'gzip, deflate, br',
     },
   });
 };
