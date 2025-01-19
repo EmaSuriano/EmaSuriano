@@ -9,7 +9,6 @@ const SUMMARY_API = 'https://emasuriano.com/api/summary';
 const LinkSchema = z.object({
   title: z.string(),
   url: z.string().url(),
-  image: z.boolean().optional()
 });
 
 const SummarySchema = z.object({
@@ -22,35 +21,32 @@ const SummarySchema = z.object({
 });
 
 type Link = z.infer<typeof LinkSchema>;
-type Summary = z.infer<typeof SummarySchema>;
 
-const toMarkdownLink = ({ title, url, image }: Link) => `${image ? '!': ''}[${title}](${url})`;
-
-const createSummaryTable = ({
-  talks,
-  posts,
-  projects,
-}: Pick<Summary, 'talks' | 'posts' | 'projects'>) => {
-  const columns = [
-    { header: 'Projects 👨‍💻', rows: projects.map(toMarkdownLink) },
-    { header: 'Posts ✍️', rows: posts.map(toMarkdownLink) },
-    { header: 'Talks 🗣', rows: talks.map(toMarkdownLink) },
-  ];
-
-  const content = new Array(ROW_AMOUNT)
-    .fill('')
-    .map((_, i) => columns.map((column) => column.rows[i]).join(' | '));
-
+const createList = (title: string, items: Link[], amount = ROW_AMOUNT) => {
   return [
-    columns.map((column) => column.header).join(' | '),
-    columns.map((_) => '---').join(' | '),
-    ...content,
-  ].map((line) => `| ${line} |`);
+    `### ${title}`,
+    ...items
+      .filter((_, i) => i < amount)
+      .map((link) => `- [${link.title}](${link.url})`),
+  ].join(LINE_SEPARATOR);
 };
 
-const createList = (title: string, items: Link[]) => {
-  return [`### ${title}`, ...items.filter((_,i) => i<ROW_AMOUNT).map(link => `- ${toMarkdownLink(link)}`)].join(LINE_SEPARATOR)
-}
+const buildMarkdown = (lines: string[]): string => {
+  return lines.join(LINE_SEPARATOR + LINE_SEPARATOR);
+};
+
+const saveInReadme = (content: string) => {
+  const today = new Date().toLocaleString('en', {
+    year: 'numeric',
+    month: '2-digit',
+    day: 'numeric',
+  });
+
+  fs.writeFileSync(
+    'README.md',
+    buildMarkdown([content, '-------------------', `Last update: _${today}_`]),
+  );
+};
 
 const main = async () => {
   const summary = await axios.get(SUMMARY_API);
@@ -59,32 +55,16 @@ const main = async () => {
     summary.data,
   );
 
-  const today = new Date().toLocaleString('en', {
-    year: 'numeric',
-    month: '2-digit',
-    day: 'numeric',
-  });
-
   const content = [
     `## Hello, I'm ${name} 👋`,
     bio,
-    createList('Latest projects:', projects.reverse()),
-    createList('Latest posts:', posts),
-    createList('Latest talks:', talks),
-    toMarkdownLink({
-      title: "Ema's github stats",
-      url: 'https://github-readme-stats.vercel.app/api?username=emasuriano&show_icons=true',
-      image: true,
-    }),
-    '---',
-    `All resources are extracted from ${toMarkdownLink({
-      title: website.split('://').pop()!,
-      url: website,
-    })}`,
-    `Last update: _${today}_`,
+    `Latest releases from [${website.split('://').pop()!}](${website}):`,
+    createList('Open source projects', projects.reverse()),
+    createList('Written posts', posts, 6),
+    createList('Talks', talks),
   ];
 
-  fs.writeFileSync('README.md', content.join(LINE_SEPARATOR + LINE_SEPARATOR));
+  saveInReadme(buildMarkdown(content));
 };
 
 main();

@@ -1,28 +1,28 @@
 ## Hello, I'm Ema Suriano 👋
 
-Passionate Engineer driven by all the Javascript ecosystem. On my spare time I like to write and speak publicly
+Passionate Engineer driven by all the Javascript ecosystem. In my spare time I like to write and speak publicly
 
-### Latest projects:
-- [Github Tracker](https://github.com/EmaSuriano/github-tracker)
+Latest releases from [emasuriano.com/](https://emasuriano.com/):
+
+### Open source projects:
 - [Astro Resume](https://github.com/EmaSuriano/astro-resume)
 - [Astro Art Portfolio](https://github.com/EmaSuriano/astro-art-portfolio)
-- [React Scroll Section](https://github.com/EmaSuriano/react-scroll-section)
+- [Gatsby Starter Mate](https://github.com/EmaSuriano/gatsby-starter-mate)
+- [Gatsby Starter Event Calendar](https://github.com/EmaSuriano/gatsby-starter-event-calendar)
 
-### Latest posts:
-- [Run a Linux Distro in your Android device](https://emasuriano.com/blog/2024-04-01-run-a-linux-distro-in-your-android-device)
-- [Going into a new direction](https://emasuriano.com/blog/going-into-a-new-direction)
-- [Open Source Project Maintenance for Busy Developers: Best Practices](https://emasuriano.com/blog/maintaining-open-source-projects-over-the-time)
-- [Efficiently manage large files in Git with Git LFS](https://blog.logrocket.com/efficiently-manage-large-files-git-with-git-lfs/)
+### Written posts:
+- [Deploying and using your ML model with Streamlit](https://emasuriano.com/til/2024-11-07-deploying-and-using-your-ml-model-with-streamlit)
+- [Supervised Learning in a Nutshell](https://emasuriano.com/blog/2024-07-04-supervised-learning-in-a-nutshell)
+- [Get Github repository preview images](https://emasuriano.com/til/2024-09-26-easily-obtain-github-repository-preview-images)
+- [Running local LLM is not as hard as I expected](https://emasuriano.com/til/2024-09-26-running-locall-llm-is-not-that-hard)
+- [Generate podcast from documents](https://emasuriano.com/til/2024-09-17-generate-podcast-from-documents)
+- [Remind yourself of Birthdays Using Google Calendar and Apps Script](https://emasuriano.com/til/2024-08-05-setup-birthday-reminder-via-email)
 
-### Latest talks:
+### Talks:
 - [Is it time for framework-agnostic apps?](https://time-for-framework-agnostic-projects.netlify.app)
 - [From create-react-app to create-any-app](https://from-cra-to-caa.netlify.app)
 - [Runtime Types Validation in Typescript](https://slides.com/emasuriano/runtime-types-validation-in-typescript)
 
-![Ema's github stats](https://github-readme-stats.vercel.app/api?username=emasuriano&show_icons=true)
+-------------------
 
----
-
-All resources are extracted from [emasuriano.com/](https://emasuriano.com/)
-
-Last update: _04/1/2024_
+Last update: _01/19/2025_
