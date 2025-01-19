@@ -27,4 +27,4 @@ Latest releases from [emasuriano.com/](https://emasuriano.com/):
 
 Last update: _01/19/2025_
 
-[![ci](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/event-listener.yml/badge.svg)](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/event-listener.yml)
+[![ci](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/ci.yml/badge.svg)](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/ci.yml)
