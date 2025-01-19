@@ -44,7 +44,12 @@ const saveInReadme = (content: string) => {
 
   fs.writeFileSync(
     'README.md',
-    buildMarkdown([content, '-------------------', `Last update: _${today}_`]),
+    buildMarkdown([
+      content,
+      '-------------------',
+      `Last update: _${today}_`,
+      '[![ci](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/event-listener.yml/badge.svg)](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/event-listener.yml)',
+    ]),
   );
 };
 
