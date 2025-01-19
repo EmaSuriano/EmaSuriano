@@ -54,12 +54,19 @@ const saveInReadme = (content: string) => {
 };
 
 const getSummary = () => {
-  if (fs.existsSync('summary.json')) {
-    // hack for Github Actions that returns 403 when calling with axios ...
-    return JSON.parse(fs.readFileSync('summary.json', 'utf-8'));
-  }
+  // if (fs.existsSync('summary.json')) {
+  //   // hack for Github Actions that returns 403 when calling with axios ...
+  //   return JSON.parse(fs.readFileSync('summary.json', 'utf-8'));
+  // }
 
-  return axios.get(SUMMARY_API);
+  return axios.get(SUMMARY_API, {
+    headers: {
+      Accept: 'application/json',
+      // hack for Github Actions that returns 403 when calling with axios ...
+      'User-Agent':
+        'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36',
+    },
+  });
 };
 
 const main = async () => {
