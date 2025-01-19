@@ -1,5 +1,6 @@
 name: ci
 
+# “At 00:00 on Monday.
 # https://crontab.guru/#0_0_*_*_1
 on:
   push:

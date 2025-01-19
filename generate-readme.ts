@@ -5,6 +5,8 @@ import z from 'zod';
 const ROW_AMOUNT = 4;
 const LINE_SEPARATOR = '\n';
 const SUMMARY_API = 'https://emasuriano.com/api/summary';
+const CI_BADGE =
+  '[![ci](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/ci.yml/badge.svg)](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/ci.yml)';
 
 const LinkSchema = z.object({
   title: z.string(),
@@ -48,26 +50,13 @@ const saveInReadme = (content: string) => {
       content,
       '-------------------',
       `Last update: _${today}_`,
-      '[![ci](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/event-listener.yml/badge.svg)](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/event-listener.yml)',
+      CI_BADGE,
     ]),
   );
 };
 
-const getSummary = () => {
-  return axios.get(SUMMARY_API, {
-    headers: {
-      // hack for Github Actions that returns 403 when calling with axios ...
-      'User-Agent':
-        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
-      Referer: 'https://emasuriano.com',
-      Accept: 'application/json',
-      'Accept-Encoding': 'gzip, deflate, br',
-    },
-  });
-};
-
 const main = async () => {
-  const summary = await getSummary();
+  const summary = await axios.get(SUMMARY_API);
 
   const { name, bio, website, projects, posts, talks } = SummarySchema.parse(
     summary.data,
