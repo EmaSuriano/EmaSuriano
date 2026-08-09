@@ -6,17 +6,17 @@ Latest releases from [emasuriano.com](https://emasuriano.com/):
 
 ### Open source projects
 - [Language Learning Client](https://github.com/EmaSuriano/language-learning-client)
-- [Astro Resume](https://github.com/EmaSuriano/astro-resume)
 - [Astro Art Portfolio](https://github.com/EmaSuriano/astro-art-portfolio)
 - [Gatsby Starter Mate](https://github.com/EmaSuriano/gatsby-starter-mate)
+- [Gatsby Starter Event Calendar](https://github.com/EmaSuriano/gatsby-starter-event-calendar)
 
 ### Written posts
+- [Sesame Wake: A Bring-Your-Own Wake Word Launcher for Sesame](https://emasuriano.com/blog/2026-05-12-sesame-wake)
+- [Ollama Launch lets you run Claude Code for free](https://emasuriano.com/til/2026-01-25-ollama-launch-free-claude-code)
+- [Building a Universal AI Chat Interface with Streamlit and LiteLLM](https://emasuriano.com/blog/2025-07-11-building-a-universal-ai-chat-interface-with-streamlit-and-litellm)
 - [The Silent Struggle: My Journey with Background Noise Dependency](https://emasuriano.com/blog/2025-04-23-the-silent-struggle-my-journey-with-background-noise-dependency)
 - [Running Ollama in GitHub Actions - Automating LLM Workflows](https://emasuriano.com/blog/2025-03-27-running-ollama-in-github-actions---automating-llm-workflows)
 - [VS Code Profiles - A Game-Changer for Managing Different Development Setups](https://emasuriano.com/til/2025-01-23-vs-code-profiles---a-game-changer-for-managing-different-development-setups)
-- [Simplifying Python Development with uv: A Modern Package Management Tool](https://emasuriano.com/blog/2025-01-21-simplifying-python-development-with-uv-a-modern-package-management-tool)
-- [Deploying and using your ML model with Streamlit](https://emasuriano.com/til/2024-11-07-deploying-and-using-your-ml-model-with-streamlit)
-- [Supervised Learning in a Nutshell](https://emasuriano.com/blog/2024-07-04-supervised-learning-in-a-nutshell)
 
 ### Talks
 - [Practical Introduction to LLMs with Ollama](https://emasuriano.github.io/workshop-ollama)
@@ -26,6 +26,6 @@ Latest releases from [emasuriano.com](https://emasuriano.com/):
 
 -------------------
 
-Last update: _07/1/2025_
+Last update: _08/9/2026_
 
 [![ci](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/ci.yml/badge.svg)](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/ci.yml)

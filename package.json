@@ -4,7 +4,8 @@
   "description": "My github profile automatized from my website --> http://emasuriano.com/",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node generate-readme"
+    "start": "tsx generate-readme",
+    "check-types": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -23,10 +24,11 @@
   },
   "homepage": "https://github.com/EmaSuriano/EmaSuriano#readme",
   "devDependencies": {
-    "@types/node": "^22.10.7",
-    "axios": "^1.7.9",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3",
-    "zod": "^3.24.3"
+    "@tsconfig/node22": "^22.0.5",
+    "@types/node": "^26.2.0",
+    "axios": "^1.19.0",
+    "tsx": "^4.21.0",
+    "typescript": "^7.0.2",
+    "zod": "^4.4.3"
   }
 }
