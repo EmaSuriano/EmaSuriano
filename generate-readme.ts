@@ -5,6 +5,7 @@ import z from 'zod';
 const ROW_AMOUNT = 4;
 const LINE_SEPARATOR = '\n';
 const SUMMARY_API = 'https://emasuriano.com/api/summary';
+const USER_AGENT = 'EmaSuriano-Profile-README-Updater/1.0 (+https://github.com/EmaSuriano/EmaSuriano)';
 const CI_BADGE =
   '[![ci](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/ci.yml/badge.svg)](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/ci.yml)';
 
@@ -38,11 +39,7 @@ const buildMarkdown = (lines: string[]): string => {
 };
 
 const saveInReadme = (content: string) => {
-  const today = new Date().toLocaleString('en', {
-    year: 'numeric',
-    month: '2-digit',
-    day: 'numeric',
-  });
+  const today = new Date().toISOString().slice(0, 10);
 
   fs.writeFileSync(
     'README.md',
@@ -56,7 +53,13 @@ const saveInReadme = (content: string) => {
 };
 
 const main = async () => {
-  const summary = await axios.get(SUMMARY_API);
+  const summary = await axios.get(SUMMARY_API, {
+    timeout: 10_000,
+    headers: {
+      Accept: 'application/json',
+      'User-Agent': USER_AGENT,
+    },
+  });
 
   const { name, bio, website, projects, posts, talks } = SummarySchema.parse(
     summary.data,
@@ -66,7 +69,7 @@ const main = async () => {
     `## Hello, I'm ${name} 👋`,
     bio,
     `Latest releases from [${website.split('/')[2]!}](${website}):`,
-    createList('Open source projects', projects.reverse()),
+    createList('Open source projects', [...projects].reverse()),
     createList('Written posts', posts, 6),
     createList('Talks', talks),
   ];

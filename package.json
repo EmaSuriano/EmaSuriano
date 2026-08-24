@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "My github profile automatized from my website --> http://emasuriano.com/",
   "main": "index.js",
+  "packageManager": "pnpm@11.23.0",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "start": "tsx generate-readme",
     "check-types": "tsc --noEmit"
