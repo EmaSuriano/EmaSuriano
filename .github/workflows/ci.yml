@@ -8,6 +8,11 @@ on:
       - master
   schedule:
     - cron: '0 0 1 * *'
+  workflow_dispatch:
+
+concurrency:
+  group: profile-readme-update
+  cancel-in-progress: false
 
 jobs:
   build-readme:
@@ -33,6 +38,11 @@ jobs:
 
       - run: pnpm check-types
 
+      - run: pnpm test
+
       - run: pnpm start
 
       - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'chore: update profile README'
+          file_pattern: README.md

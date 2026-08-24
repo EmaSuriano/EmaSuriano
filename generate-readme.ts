@@ -1,56 +1,9 @@
 import axios from 'axios';
 import fs from 'fs';
-import z from 'zod';
+import { buildReadme, SummarySchema } from './readme';
 
-const ROW_AMOUNT = 4;
-const LINE_SEPARATOR = '\n';
 const SUMMARY_API = 'https://emasuriano.com/api/summary';
 const USER_AGENT = 'EmaSuriano-Profile-README-Updater/1.0 (+https://github.com/EmaSuriano/EmaSuriano)';
-const CI_BADGE =
-  '[![ci](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/ci.yml/badge.svg)](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/ci.yml)';
-
-const LinkSchema = z.object({
-  title: z.string(),
-  url: z.string().url(),
-});
-
-const SummarySchema = z.object({
-  name: z.string(),
-  bio: z.string(),
-  website: z.string().url(),
-  projects: z.array(LinkSchema),
-  posts: z.array(LinkSchema),
-  talks: z.array(LinkSchema),
-});
-
-type Link = z.infer<typeof LinkSchema>;
-
-const createList = (title: string, items: Link[], amount = ROW_AMOUNT) => {
-  return [
-    `### ${title}`,
-    ...items
-      .filter((_, i) => i < amount)
-      .map((link) => `- [${link.title}](${link.url})`),
-  ].join(LINE_SEPARATOR);
-};
-
-const buildMarkdown = (lines: string[]): string => {
-  return lines.join(LINE_SEPARATOR + LINE_SEPARATOR);
-};
-
-const saveInReadme = (content: string) => {
-  const today = new Date().toISOString().slice(0, 10);
-
-  fs.writeFileSync(
-    'README.md',
-    buildMarkdown([
-      content,
-      '-------------------',
-      `Last update: _${today}_`,
-      CI_BADGE,
-    ]),
-  );
-};
 
 const main = async () => {
   const summary = await axios.get(SUMMARY_API, {
@@ -61,20 +14,12 @@ const main = async () => {
     },
   });
 
-  const { name, bio, website, projects, posts, talks } = SummarySchema.parse(
-    summary.data,
+  const content = buildReadme(
+    SummarySchema.parse(summary.data),
+    new Date().toISOString().slice(0, 10),
   );
 
-  const content = [
-    `## Hello, I'm ${name} 👋`,
-    bio,
-    `Latest releases from [${website.split('/')[2]!}](${website}):`,
-    createList('Open source projects', [...projects].reverse()),
-    createList('Written posts', posts, 6),
-    createList('Talks', talks),
-  ];
-
-  saveInReadme(buildMarkdown(content));
+  fs.writeFileSync('README.md', content);
 };
 
 main();

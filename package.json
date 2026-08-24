@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "tsx generate-readme",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "test": "tsx --test *.test.ts"
   },
   "repository": {
     "type": "git",
