@@ -26,6 +26,6 @@ Latest releases from [emasuriano.com](https://emasuriano.com/):
 
 -------------------
 
-Last update: _2026-08-24_
+Last update: _2026-08-28_
 
 [![ci](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/ci.yml/badge.svg)](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/ci.yml)
