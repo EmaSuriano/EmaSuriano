@@ -11,12 +11,12 @@ Latest releases from [emasuriano.com](https://emasuriano.com/):
 - [Gatsby Starter Event Calendar](https://github.com/EmaSuriano/gatsby-starter-event-calendar)
 
 ### Written posts
+- [Making a personal site readable to LLMs](https://emasuriano.com/blog/2026-08-31-making-a-personal-site-readable-to-llms)
+- [PR previews on GitHub Pages without Netlify](https://emasuriano.com/til/2026-08-31-pr-previews-on-github-pages-without-netlify)
 - [Sesame Wake: A Bring-Your-Own Wake Word Launcher for Sesame](https://emasuriano.com/blog/2026-05-12-sesame-wake)
 - [Ollama Launch lets you run Claude Code for free](https://emasuriano.com/til/2026-01-25-ollama-launch-free-claude-code)
 - [Building a Universal AI Chat Interface with Streamlit and LiteLLM](https://emasuriano.com/blog/2025-07-11-building-a-universal-ai-chat-interface-with-streamlit-and-litellm)
 - [The Silent Struggle: My Journey with Background Noise Dependency](https://emasuriano.com/blog/2025-04-23-the-silent-struggle-my-journey-with-background-noise-dependency)
-- [Running Ollama in GitHub Actions - Automating LLM Workflows](https://emasuriano.com/blog/2025-03-27-running-ollama-in-github-actions---automating-llm-workflows)
-- [VS Code Profiles - A Game-Changer for Managing Different Development Setups](https://emasuriano.com/til/2025-01-23-vs-code-profiles---a-game-changer-for-managing-different-development-setups)
 
 ### Talks
 - [Practical Introduction to LLMs with Ollama](https://emasuriano.github.io/workshop-ollama)
@@ -26,6 +26,6 @@ Latest releases from [emasuriano.com](https://emasuriano.com/):
 
 -------------------
 
-Last update: _2026-08-28_
+Last update: _2026-08-31_
 
 [![ci](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/ci.yml/badge.svg)](https://github.com/EmaSuriano/EmaSuriano/actions/workflows/ci.yml)
